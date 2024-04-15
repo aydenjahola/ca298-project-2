@@ -24,6 +24,12 @@ function ViewAllModules() {
                   <h5 className="text-xl font-semibold mb-2">
                     {module.code} {module.full_name}
                   </h5>
+                  <p className="text-gray-600 text-sm">
+                    CA Split: <strong>{module.ca_split}</strong>
+                  </p>
+                  <p className="text-gray-600 text-sm">
+                    Delivered To: <strong>{module.delivered_to}</strong>
+                  </p>
                   <div className="flex justify-end">
                     <a
                       href={`/module/${module.code}`}
