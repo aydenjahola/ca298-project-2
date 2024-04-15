@@ -9,7 +9,7 @@ function ViewAllModulesCohort() {
     fetch(`http://127.0.0.1:8000/api/module/?delivered_to=${module}`)
       .then((response) => response.json())
       .then((data) => setData(data));
-  }, []);
+  }, [module]);
 
   const displayAllModulesCohort = () => {
     return (
@@ -18,7 +18,7 @@ function ViewAllModulesCohort() {
           <h1 className="text-3xl font-bold mb-4">
             All Modules Taken By {module}
           </h1>
-          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="grid grid-cols-1 gap-4">
             {data.map((module, index) => (
               <div
                 key={index}
@@ -26,7 +26,7 @@ function ViewAllModulesCohort() {
               >
                 <div className="px-6 py-4">
                   <h5 className="text-xl font-semibold mb-2">
-                    {module.full_name}
+                    {module.code} {module.full_name}
                   </h5>
                   <div className="flex justify-end">
                     <a

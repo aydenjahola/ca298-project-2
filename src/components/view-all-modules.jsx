@@ -14,7 +14,7 @@ function ViewAllModules() {
       <div className="bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto sm:px-6 lg:px-8">
           <h1 className="text-3xl font-bold mb-4">All Modules</h1>
-          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="grid grid-cols-1 gap-4">
             {data.map((module, index) => (
               <div
                 key={index}
@@ -22,7 +22,7 @@ function ViewAllModules() {
               >
                 <div className="px-6 py-4">
                   <h5 className="text-xl font-semibold mb-2">
-                    {module.full_name}
+                    {module.code} {module.full_name}
                   </h5>
                   <div className="flex justify-end">
                     <a

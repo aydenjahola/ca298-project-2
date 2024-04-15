@@ -18,7 +18,7 @@ function ViewAllStudents() {
           <h1 className="text-3xl font-bold mb-4">
             All Students Taking {cohort}
           </h1>
-          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="grid grid-cols-1 gap-4">
             {data.map((student, index) => (
               <div
                 key={index}
@@ -28,6 +28,12 @@ function ViewAllStudents() {
                   <h5 className="text-xl font-semibold mb-2">
                     {student.first_name} {student.last_name}
                   </h5>
+                  <p className="py-2">
+                    Email: <strong>{student.email}</strong>
+                  </p>
+                  <p className="mb-2">
+                    Student Number: <strong>{student.student_id}</strong>
+                  </p>
                   <div className="flex justify-end">
                     <a
                       href={`/student/${student.student_id}`}
